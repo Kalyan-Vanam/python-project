@@ -1,0 +1,18 @@
+	 WELCOME SKML TIMBER DEPOT
+ Invoice Number:3991
+ Customer Name:ghcj
+ Phone Number:fhj
+ Customer Email:vgh
+==================================================
+ Products			ft^2		Price
+================================================== 0		78		
+ 0		7		7777777
+ 0		7		7777777
+ 0		7		7777777
+ 0		7		7777777
+
+==================================================
+ Sub Amount:			
+ Tax Amount:			
+ Sub Amount:			
+==================================================

@@ -1,0 +1,15 @@
+	 WELCOME SKML TIMBER DEPOT
+ Invoice Number:5226
+ Customer Name:kalyan vanam
+ Phone Number:8688081084
+ Customer Email:vanamkalyan050@gmail.com
+==================================================
+ Products			ft^2		Price
+================================================== 0		3		222
+ 0		3		222
+
+==================================================
+ Sub Amount:			
+ Tax Amount:			
+ Sub Amount:			
+==================================================

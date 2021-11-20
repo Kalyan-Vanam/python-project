@@ -1,0 +1,20 @@
+	 WELCOME SKML TIMBER DEPOT
+ Invoice Number:2680
+ Customer Name:gfd
+ Phone Number:h
+ Customer Email:r
+==================================================
+ Products			ft^2		Price
+==================================================
+ 0		1		4
+ 0		1		4
+ 0		1		4
+ 0		1		4
+ 0		1		4
+
+==================================================
+ Sub Amount:			
+ Tax Amount:			
+ Sub Amount:			
+==================================================
+
