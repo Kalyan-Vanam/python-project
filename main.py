@@ -20,7 +20,7 @@ class Bill_App:
        self.invoice_no.set(z)
        self.c_email=StringVar()
        self.search_bill=StringVar()
-       self.product=IntVar()
+       self.product=StringVar()
        self.Height=IntVar()
        self.Size=IntVar()
        self.prices=IntVar()
@@ -32,10 +32,10 @@ class Bill_App:
 
        #product Categories list
        self.Category=["Select Option","Teak","Neem","Jamun","Black Thuma","Nidra Ganneru","Saw Dust","Fire Wood"]
-       self.subcatSawdust=["Select No Of Kg's","1kg","10kg","20kg","30kg"]
+       self.subcatSawdust=["Select No Of Kg's","1kg","15kg","25kg","30kg"]
        self.price_1kg=1
-       self.price_10kg=10
-       self.price_20kg=20
+       self.price_15kg=15
+       self.price_25kg=25
        self.price_30kg=30
       
        self.subcatfirewood=["Select No Of Kg's","10kg","20kg","40kg","60kg"]
@@ -122,7 +122,7 @@ class Bill_App:
        self.lblCategory=Label(Product_Frame,text="Select Categories",font=('arial',12,'bold'),bg="white",bd=4)
        self.lblCategory.grid(row=0,column=0,stick=W,padx=5,pady=2)
       
-       self.combo_Category=ttk.Combobox(Product_Frame,value=self.Category,font=('arial',10,'bold'),width=24,state="readonly")
+       self.combo_Category=ttk.Combobox(Product_Frame,textvariable=self.product,value=self.Category,font=('arial',10,'bold'),width=24,state="readonly")
        self.combo_Category.current(0)
        self.combo_Category.grid(row=0,column=1,sticky=W,padx=5,pady=2)
        self.combo_Category.bind("<<ComboboxSelected>>",self.categories)
@@ -134,7 +134,7 @@ class Bill_App:
        self.comboSize=ttk.Combobox(Product_Frame,textvariable=self.Size,value=self.subcatSizes,font=('arial',10,'bold'),width=24,state="readonly")
        self.comboSize.current(0)
        self.comboSize.grid(row=1,column=1,sticky=W,padx=5,pady=2)
-       self.comboSize.bind("<<comboboxSelected>>",self.price)
+       self.comboSize.bind("<<ComboboxSelected>>",self.price)
       
        #Height
        self.lblHeight=Label(Product_Frame,text="Select Height",font=('arial',12,'bold'),bg="white",bd=4)
@@ -265,7 +265,7 @@ class Bill_App:
          if self.product.get()=="":
                messagebox.showerror("Error","Please Select the product Name")
          else:
-             self.textarea.insert(END ,f"\n {self.product.get()}\t\t{self.qty.get()}\t\t{self.k}")
+             self.textarea.insert(END ,f"\n{self.product.get()}\t\t{self.qty.get()}\t\t{self.k}")
              self.sub_total.set(str('Rs.%.2f'%(sum(self.l))))
              self.tax_input.set(str('Rs.%.2f'%((((sum(self.l)) - (self.prices.get()))*Tax)/100)))
              self.total.set(str('Rs.%.2f'%(((sum(self.l))+((((sum(self.l)) - (self.prices.get()))*Tax)/100)))))
@@ -385,9 +385,38 @@ class Bill_App:
               self.comboHeight.current(0)
     
     def price(self,event=""):
+          if self.comboSize.get()=="1kg":
+              self.comboprice.config(value=self.price_1kg)
+              self.comboprice.current(0)
+
+          if self.comboSize.get()=="15kg":
+              self.comboprice.config(value=self.price_15kg)
+              self.comboprice.current(0)
+
+          if self.comboSize.get()=="25kg":
+              self.comboprice.config(value=self.price_25kg)
+              self.comboprice.current(0)
+
+          if self.comboSize.get()=="30kg":
+              self.comboprice.config(value=self.price_30kg)
+              self.comboprice.current(0)
+           
+          if self.comboSize.get()=="10kg":
+              self.comboprice.config(value=self.fprice_10kg)
+              self.comboprice.current(0)
+              
+          if self.comboSize.get()=="20kg":
+              self.comboprice.config(value=self.fprice_20kg)
+              self.comboprice.current(0)
+
+          if self.comboSize.get()=="40kg":
+              self.comboprice.config(value=self.fprice_40kg)
+              self.comboprice.current(0)
+
           if self.comboSize.get()=="60kg":
               self.comboprice.config(value=self.fprice_60kg)
               self.comboprice.current(0)
+      
               
 
 
